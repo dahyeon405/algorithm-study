@@ -7,12 +7,7 @@ var twoSum = function (nums, target) {
   while (true) {
     let sum = sortedNums[i] + sortedNums[k];
     if (sum === target) {
-      if (sortedNums[i] === sortedNums[k]) {
-        let firstIndex = nums.indexOf(sortedNums[i]);
-        let nextIndex = nums.slice(firstIndex + 1).indexOf(sortedNums[i]);
-        return [firstIndex, nextIndex];
-      }
-      return [nums.indexOf(sortedNums[i]), nums.indexOf(sortedNums[k])];
+      return [nums.indexOf(sortedNums[i]), nums.lastIndexOf(sortedNums[k])];
     } else if (sum < target) {
       i++;
     } else k--;
