@@ -13,3 +13,4 @@ class Solution:
                 if sum > 0: _max = max(_max, total)
 
         return _max
+
