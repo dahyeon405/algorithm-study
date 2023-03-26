@@ -57,8 +57,6 @@ def closestPair(points):
     Q = sorted(points, key=lambda point: point.y)
     return closestUtil(P, Q, n)
 
-
-
 Points = [Point(2, 3), Point(12, 30),
 	Point(40, 50), Point(5, 1),
 	Point(12, 10), Point(3, 4)]
