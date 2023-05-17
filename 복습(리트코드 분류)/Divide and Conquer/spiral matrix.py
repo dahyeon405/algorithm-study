@@ -36,3 +36,38 @@ class Solution:
             k = loop
 
         return result
+
+# 이런 간단한 방법이...
+def spiralOrder(matrix):
+    n = len(matrix)
+    m = len(matrix[0])
+    row = n-1
+    col = m-1
+    r = 0
+    c = 0
+
+    ans = []
+    while r<row and c<col:
+
+        for i in range(c,col):
+            ans.append(matrix[r][i])
+        
+        for j in range(r,row):
+            ans.append(matrix[j][col])
+        
+        for j in range(col,c,-1):
+            ans.append(matrix[row][j])
+        
+        for j in range(row,r,-1):
+            ans.append(matrix[j][c])
+        
+        row -= 1
+        r += 1
+        col -= 1
+        c += 1
+    
+    if len(ans)<m*n:
+        for i in range(r,row+1):
+            for j in range(c,col+1):
+                ans.append(matrix[i][j])
+    return ans
